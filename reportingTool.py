@@ -3,6 +3,18 @@
 # import needed packages
 import psycopg2
 
+# connect to database & feed query as parameter
+
+
+def get_Results(sql_Query):
+    db = psycopg2.connect("dbname=news")
+    cursor = db.cursor()
+    cursor.execute(sql_Query)
+    results = cursor.fetchall()
+    db.close()
+    return results
+
+
 # sql statements
 q1 = ("SELECT title, COUNT(*) AS viewNum \n"
       "FROM articles AS a JOIN log AS l \n"
@@ -19,22 +31,11 @@ q2 = ("SELECT au.name, COUNT(*) as viewNum \n"
       "GROUP BY au.name \n"
       "ORDER BY viewNum DESC;")
 
-q3 = ("SELECT ROUND((stat*100.0)/visitors, 3) AS results, \n"
+q3 = ("SELECT ROUND((stat*100.00)/visitors, 3) AS results, \n"
       "to_char(errorTime, 'MON DD, YYYY') \n"
       "FROM countError \n"
       "ORDER BY results DESC \n"
       "LIMIT 1;")
-
-# connect to database & feed query as parameter
-
-
-def get_Results(sql_Query):
-    db = psycopg2.connect("dbname=news")
-    cursor = db.cursor()
-    cursor.execute(sql_Query)
-    results = cursor.fetchall()
-    db.close()
-    return results
 
 
 # assign each fed query into a variable and feed it to the function
