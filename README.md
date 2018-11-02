@@ -14,7 +14,7 @@ The questions the SQL queries answers are the following:
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
 
-## Requirements to Run
+## Requirements
 
 You should have the following to run the project:
 
@@ -22,11 +22,14 @@ You should have the following to run the project:
 
 [VirtualBox](https://www.virtualbox.com/) - An open source virtualization product by Oracle.
 
-[Git](http://git-scm.com/) - An open source version control system (VCS)
+[Git](http://git-scm.com/) - An open source version control system (VCS).
 
 [Python3](https://www.python.org/downloads/release/python-371/) - The code uses version 3.7.1 of Python
 
-[Important Note] Up to date, VirtualBox Version 5.1 is the most stable with the Vagrant environment. Moreover, if you are running on a Windows Operating System, Vagrant Version 1.9.2 is the most stable.
+**Important Notes:**
+1. For Mac and Linux users, the default terminal works fine. For Windows users, Git Bash is recommended.
+2. Up to date, VirtualBox Version 5.1 is the most stable with the Vagrant environment.
+3. If you are running on a Windows Operating System, Vagrant Version 1.9.2 is the most stable.
 
 ## Running the Code
 To run the code, follow the steps below:
@@ -35,13 +38,13 @@ To run the code, follow the steps below:
 
 2. Download and install Vagrant and VirtualBox. If you are running a Windows Operating System, Vagrant Version 1.9.2 is the most stable.
 
-3. Download the [VagrantFile](https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile)for running the preconfigured Vagrant settings.
+3. Download the [VagrantFile](https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile)for running the preconfigured Vagrant settings. Place it into a folder. Call it whatever you want.
 
 4. Download the [database](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
-5. Open the Udacity Vagrant Folder in the bash terminal and cd into the Vagrant folder.
+5. Open a bash terminal and `cd` into the folder you placed your VagrantFile in.
 
-6. Open a bash terminal and run the command `vagrant up`. For Windows users, Git is the recommended terminal.
+6. Run the command `vagrant up`. For Windows users, Git is the recommended terminal.
 
 7. Once vagrant is installed successfully, run the command `vagrant ssh` to start up the virtual environment.
 
