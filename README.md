@@ -35,11 +35,9 @@ To run the code, follow the steps below:
 
 2. Download and install Vagrant and VirtualBox. If you are running a Windows Operating System, Vagrant Version 1.9.2 is the most stable.
 
-3. Download the [VagrantFile]
-(https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile)for running the preconfigured Vagrant settings.
+3. Download the [VagrantFile](https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile)for running the preconfigured Vagrant settings.
 
-4. Download the [database]
-(https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+4. Download the [database](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
 5. Open the Udacity Vagrant Folder in the bash terminal and cd into the Vagrant folder.
 
@@ -55,7 +53,7 @@ To run the code, follow the steps below:
 
 11. Run the database with the following command: `psql -d news`
 
-12. Run the commands in the [createViews.sql] file located with this project to create the needed views in the database to successfully run the project. Run the command: `psql -d news -f createViews.sql` in the terminal
+12. Run the [createViews.sql] file to create the needed views in the database to successfully run the project. Run the command: `psql -d news -f createViews.sql` in the terminal
 
 13. Run the command `python reportingTool.py` to run the python program and fetch the query results.
 
@@ -66,7 +64,7 @@ These views were created to preserve the data integrity of the database.
 
 First View Code:
 
-    ```sql
+    ```psql
     CREATE VIEW stat_log AS
     SELECT COUNT(*) AS stat, status, cast(time AS date) AS day
     FROM log
@@ -78,7 +76,7 @@ First View Code:
 
 Second View Code:
 
-    ```sql
+    ```psql
     CREATE VIEW visitors_in_total AS
     SELECT count(*) AS visitors, cast(time AS date) AS errorTime
     FROM log
@@ -87,7 +85,7 @@ Second View Code:
 
 Third View Code:
 
-    ```sql
+    ```psql
     CREATE VIEW countError AS
     SELECT * FROM stat_log JOIN visitors_in_total
     ON stat_log.day = visitors_in_total.errorTime;
