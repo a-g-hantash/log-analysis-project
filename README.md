@@ -64,7 +64,7 @@ These views were created to preserve the data integrity of the database.
 
 First View Code:
 
-    ```psql
+    ``` sql
     CREATE VIEW stat_log AS
     SELECT COUNT(*) AS stat, status, cast(time AS date) AS day
     FROM log
@@ -76,7 +76,7 @@ First View Code:
 
 Second View Code:
 
-    ```psql
+    ``` sql
     CREATE VIEW visitors_in_total AS
     SELECT count(*) AS visitors, cast(time AS date) AS errorTime
     FROM log
@@ -85,7 +85,7 @@ Second View Code:
 
 Third View Code:
 
-    ```psql
+    ``` sql
     CREATE VIEW countError AS
     SELECT * FROM stat_log JOIN visitors_in_total
     ON stat_log.day = visitors_in_total.errorTime;
